@@ -1,8 +1,8 @@
 {
   "current": {
-    "color_body_bg": "#ffffff",
+    "color_body_bg": "rgba(0,0,0,0)",
     "color_body_text": "#5b4c45",
-    "color_primary_color": "#0f857c",
+    "color_primary_color": "#769ef5",
     "color_primary_button_text": "#ffffff",
     "color_sale_badge": "#a5674d",
     "color_borders": "#ede8e7",

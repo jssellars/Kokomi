@@ -105,7 +105,7 @@ $opacity-image-overlay: {{ settings.image_overlay_opacity }};
 $transition-link-hover: 0.1s cubic-bezier(0.44, 0.13, 0.48, 0.87);
 
 /*====== Sizes ======*/
-$width-site: 1280px;
+$width-site: 1500px;
 $gutter: 30px;
 $mobile-icon-line-thickness: 5px;
 
@@ -1507,11 +1507,6 @@ html {
 .site-wrapper {
   max-width: $width-site;
   margin: 0 auto;
-  padding: 0 ($gutter / 2);
-
-  @include media-query($medium-up) {
-    padding: 0 $gutter;
-  }
 }
 
 .main-content {
@@ -2212,13 +2207,6 @@ th {
 
 .site-header__site-name {
   display: block;
-  margin: $gutter / 2;
-}
-
-@include media-query($medium-up) {
-  .site-header__site-name {
-    margin: $gutter 0;
-  }
 }
 
 .top-bar,
