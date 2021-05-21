@@ -1,0 +1,15 @@
+#sidebar {
+    background: #E9DDF9;
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    width: 20vw;
+    padding: 6px 14px;
+    z-index: 1;
+    position: fixed; 
+}
+
+.main-content {
+    margin-left: 20vw;
+}
+
