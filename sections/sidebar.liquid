@@ -1,4 +1,87 @@
+
+{%- unless section.settings.logo == blank -%}
+  {%- assign logo_max_height = section.settings.logo_max_width | divided_by: section.settings.logo.aspect_ratio -%}
+  {% if logo_max_height > 600 %}
+    {%- assign logo_max_width = 600 | times: section.settings.logo.aspect_ratio -%}
+  {% else %}
+    {%- assign logo_max_width = section.settings.logo_max_width -%}
+  {% endif %}
+
+  <style>
+    .site-header__logo {
+      width: {{ logo_max_width | append: 'px'}};
+    }
+    #HeaderLogoWrapper {
+      max-width: {{ logo_max_width | append: 'px'}} !important;
+    }
+  </style>
+{%- endunless -%}
+
+
 <div data-section-id="{{ section.id }}" data-section-type="sidebar-section">
+
+   <hr class="small--hide hr--border">
+
+  <header class="site-header grid medium-up--grid--table" role="banner">
+    <div class="grid__item small--text-center">
+      <div itemscope itemtype="http://schema.org/Organization">
+        {% comment %}
+          Use the uploaded logo from theme settings if enabled.
+          Site name uses `h1` tag on homepage, div on other pages.
+        {% endcomment %}
+        {%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+        {% if section.settings.logo %}
+          <div id="HeaderLogoWrapper" class="supports-js">
+            <a href="{{ routes.root_url }}" itemprop="url" style="padding-top:{{ 1 | divided_by: section.settings.logo.aspect_ratio | times: 100}}%; display: block;">
+              <img id="HeaderLogo"
+                   class="lazyload"
+                   src="{{ section.settings.logo | img_url: '150x150' }}"
+                   data-src="{{ img_url }}"
+                   data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                   data-aspectratio="{{ product.featured_image.aspect_ratio }}"
+                   data-sizes="auto"
+                   alt="{{ section.settings.logo.alt | default: shop.name }}"
+                   itemprop="logo">
+            </a>
+          </div>
+          <noscript>
+            {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
+            <a href="{{ routes.root_url }}" itemprop="url">
+              <img class="site-header__logo" src="{{ section.settings.logo | img_url: image_size }}"
+              srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+              alt="{{ section.settings.logo.alt | default: shop.name }}"
+              itemprop="logo">
+            </a>
+          </noscript>
+          {% if request.page_type == 'index' %}
+            <h1 class="visually-hidden">{{ shop.name }}</h1>
+          {% endif %}
+        {% else %}
+          {% if request.page_type == 'index' %}
+            <h1 class="site-header__site-name">
+              <a href="{{ routes.root_url }}" itemprop="url">{{ shop.name }}</a>
+            </h1>
+          {% else %}
+            <a href="{{ routes.root_url }}" class="site-header__site-name h1" itemprop="url">
+              {{ shop.name }}
+            </a>
+            {% if request.page_type == 'index' %}
+              <h1 class="visually-hidden">{{ shop.name }}</h1>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+    {% unless section.settings.tagline == blank %}
+      <div class="grid__item medium-up--text-right small--text-center">
+        <div class="rte tagline">
+          {{ section.settings.tagline }}
+        </div>
+      </div>
+    {% endunless %}
+  </header>
+
   <nav class="grid__item small--text-center medium-up--one-fifth" role="navigation">
     <hr class="hr--small medium-up--hide">
     <button id="ToggleMobileMenu" class="mobile-menu-icon medium-up--hide" aria-haspopup="true" aria-owns="SiteNav">
@@ -253,6 +336,38 @@
         "zh-CN": "logo 图片",
         "zh-TW": "標誌圖片"
       }
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "label": {
+        "cs": "Šířka vlastního loga",
+        "da": "Tilpasset logobredde",
+        "de": "Logobreite",
+        "en": "Custom logo width",
+        "es": "Ancho del logo personalizado",
+        "fi": "Mukautetun logon leveys",
+        "fr": "Largeur personnalisée du logo",
+        "it": "Larghezza logo personalizzato",
+        "ja": "ロゴの幅をカスタマイズする",
+        "ko": "사용자 지정 로고 폭",
+        "nb": "Tilpasset logobredde",
+        "nl": "Aangepaste logo-breedte",
+        "pl": "Niestandardowa szerokość logo",
+        "pt-BR": "Largura do logo personalizado",
+        "pt-PT": "Largura de logótipo personalizada",
+        "sv": "Anpassad logotypsbredd",
+        "th": "ความกว้างของโลโก้ที่กำหนดเอง",
+        "tr": "Özel logo genişliği",
+        "vi": "Chiều rộng logo tùy chỉnh",
+        "zh-CN": "自定义 logo 宽度",
+        "zh-TW": "自訂商標寬度"
+      },
+      "default": 150,
+      "min": 50,
+      "max": 250,
+      "step": 5,
+      "unit": "px"
     },
     {
       "type": "link_list",
