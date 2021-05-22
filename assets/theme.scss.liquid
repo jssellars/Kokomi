@@ -1255,7 +1255,7 @@ svg:not(:root) {
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-left: -$grid-gutter;
+  overflow: hidden;
 }
 
 .grid__item {
@@ -1505,6 +1505,7 @@ html {
 }
 
 .site-wrapper {
+  width: 100%;
   max-width: $width-site;
   margin: 0 auto;
 }
