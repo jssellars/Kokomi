@@ -1,26 +1,11 @@
-<footer class="site-footer" role="contentinfo" data-section-id="{{ section.id }}" data-section-type="footer-section">
+<footer id="footer" role="contentinfo" data-section-id="{{ section.id }}" data-section-type="footer-section">
 
-  <div class="grid">
-
-    {% case section.blocks.size %}
-      {% when 0 %}
-      {% when 1 %}
-        {% assign column_width = 'text-left' %}
-      {% when 2 %}
-        {% assign column_width = 'medium-up--one-half small--one-whole' %}
-      {% when 3 %}
-        {% assign column_width = 'medium-up--one-third small--one-whole' %}
-      {% when 4 %}
-        {% assign column_width = 'medium-up--one-quarter small--one-whole' %}
-    {% endcase %}
+  <div>
 
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'menu' %}
-          <div class="grid__item {{ column_width }}">
-            {% if block.settings.title %}
-              <h3 class="site-footer__section-title">{{ block.settings.title | escape }}</h3>
-            {% endif %}
+          <div>
             <ul class="site-footer__menu">
               {% for link in linklists[block.settings.menu].links %}
                 <li><a href="{{ link.url }}">{{ link.title }}</a></li>
@@ -29,20 +14,11 @@
           </div>
 
         {% when 'text' %}
-          <div class="grid__item {{ column_width }}">
+          <div>
             {% if block.settings.title %}
-              <h3 class="site-footer__section-title">{{ block.settings.title | escape }}</h3>
+              <h3>{{ block.settings.title | escape }}</h3>
             {% endif %}
             <div class="rte">{{ block.settings.richtext }}</div>
-          </div>
-
-        {% when 'newsletter' %}
-          <div class="grid__item {{ column_width }}">
-            {% if block.settings.title %}
-              <h3 class="site-footer__section-title">{{ block.settings.title | escape }}</h3>
-            {% endif %}
-            <h3 class="site-footer__section-title">{{ 'general.newsletter_form.newsletter_heading' | t }}</h3>
-            {% include 'newsletter', label: block.settings.subtext %}
           </div>
 
       {% endcase %}
@@ -50,32 +26,7 @@
 
     </div>
 
-  {% if section.blocks.size > 0 %}
-    <hr>
-  {% endif %}
-
-  <div class="grid medium-up--grid--table sub-footer small--text-center">
-    <div class="grid__item medium-up--one-half">
-      <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url }}. {{ powered_by_link }}</small>
-    </div>
-    {%- if section.settings.show_payment_icons -%}
-      {%- unless shop.enabled_payment_types == empty -%}
-        <div class="grid__item medium-up--one-half medium-up--text-right">
-          <span class="visually-hidden">{{ 'general.payment.method' | t }}</span>
-          <ul class="list--inline payment-icons">
-            {%- for type in shop.enabled_payment_types -%}
-              <li>
-                {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-              </li>
-            {%- endfor -%}
-          </ul>
-        </div>
-      {%- endunless -%}
-    {%- endif -%}
-  </div>
 </footer>
-
-
 
 {% schema %}
 {
