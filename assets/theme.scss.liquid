@@ -1254,13 +1254,12 @@ svg:not(:root) {
   @include clearfix();
   list-style: none;
   margin: 0;
-  padding: 0;
+  width: 100vw;
   overflow: hidden;
 }
 
 .grid__item {
   float: left;
-  padding-left: $grid-gutter;
   width: 100%;
 
   &[class*="--push"] {
@@ -1507,7 +1506,10 @@ html {
 .site-wrapper {
   width: 100%;
   max-width: $width-site;
-  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 15vw;
+  text-align: center;
 }
 
 .main-content {

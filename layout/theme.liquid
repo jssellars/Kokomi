@@ -94,10 +94,12 @@
     {% endcomment %}
 
   <div class="site-wrapper">
+  
+  {% section "sidebar" %}
 
     <div class="grid">
 
-      {% section "sidebar" %}
+      
 
       <main class="main-content grid__item medium-up--four-fifths" id="MainContent" role="main">
         {% unless request.page_type == 'index' %}
