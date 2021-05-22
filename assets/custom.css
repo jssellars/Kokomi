@@ -17,6 +17,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    margin-top: 3em;
 }
 
 #shopify-section-header {
@@ -28,7 +29,9 @@
 
 .header-items {
     display: flex;
+    justify-content: flex-end;
     padding-top: 10px;
+    padding-right: 3rem;
 }
 
 .main-content {
