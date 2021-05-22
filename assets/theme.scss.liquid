@@ -2086,11 +2086,13 @@ th {
 
 .announcement-bar {
   display: block;
-  position: relative;
+  position: absolute;
   text-align: center;
   min-height: 5px;
   background-color: $color-primary;
   text-decoration: none;
+  width: 100%;
+  z-index: -1;
 }
 
 .announcement-bar__message {
