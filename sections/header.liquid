@@ -12,7 +12,7 @@
     }
   </style>
 
-  <div class="top-bar grid">
+  <div class="top-bar">
   
   {% if section.settings.announcement_link == blank %}
     <div class="announcement-bar">
@@ -32,8 +32,9 @@
 {% endif %}
 
 
+<div class="header-items">
 
-    <div class="grid__item medium-up--one-fifth small--one-half">
+    <div>
       <div class="top-bar__search">
         <a href="{{ routes.search_url }}" class="medium-up--hide">
           {% include 'icon-search' %}
@@ -50,7 +51,7 @@
     </div>
 
     {% if shop.customer_accounts_enabled %}
-      <div class="grid__item medium-up--two-fifths small--hide">
+      <div>
         <span class="customer-links small--hide">
           {% if customer %}
             {% if customer.first_name != blank %}
@@ -70,7 +71,7 @@
       </div>
     {% endif %}
 
-    <div class="grid__item {% if shop.customer_accounts_enabled %} medium-up--two-fifths {% else %} medium-up--four-fifths {% endif %} small--one-half text-right">
+    <div>
       <a href="{{ routes.cart_url }}" class="site-header__cart">
         {% include 'icon-cart' %}
         <span class="small--hide">
@@ -79,6 +80,7 @@
         </span>
       </a>
     </div>
+  </div>
   </div>
 
  

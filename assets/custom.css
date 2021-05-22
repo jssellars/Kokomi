@@ -26,6 +26,11 @@
     z-index: 1000;
 }
 
+.header-items {
+    display: flex;
+    padding-top: 10px;
+}
+
 .main-content {
     display: flex;
     width: 85vw;
