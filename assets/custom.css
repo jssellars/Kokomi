@@ -66,3 +66,12 @@
     display: inline;
     padding: 10px 40px;
 }
+
+.gallery-section {
+    width: fit-content;
+    block-size: fit-content;
+}
+
+#enrm-gallery-name-69868 {
+    visibility: hidden;
+}
