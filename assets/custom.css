@@ -65,3 +65,15 @@
     overflow: auto;
     height: 100%;
 }
+
+.enrm-branding a {
+    visibility: hidden;
+    color: white;
+    height: 0;
+    width: 0;
+}
+
+#enrm-branding-69868 {
+    visibility: hidden;
+    color: white;
+}
