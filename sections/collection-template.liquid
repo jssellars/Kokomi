@@ -1,4 +1,8 @@
 <!-- /templates/collection.liquid -->
+<div class="collections-section">
+
+<h1> {{ collection.current_type }} <h1>
+
 {% paginate collection.products by 12 %}
 
 <div data-section-id="{{ section.id }}" data-section-type="collection-template" data-sort-enabled="{{ section.settings.collection_sort_enable }}" data-tags-enabled="{{ section.settings.collection_tag_enable }}">
@@ -102,6 +106,8 @@
  </div>
 
 {% endpaginate %}
+
+</div>
 
 
 

@@ -36,13 +36,13 @@
 
 .main-content {
     display: flex;
-    width: 85vw;
+    width: 100%;
     position: relative;
     flex: 1 1;
     min-width: 0%;
     max-width: 100%;
-    margin: 6rem auto 3rem auto;
     justify-content:center;
+    overflow: auto;
 }
 
 #shopify-section-slideshow {
@@ -67,11 +67,9 @@
     padding: 10px 40px;
 }
 
-.gallery-section {
-    width: fit-content;
-    block-size: fit-content;
-}
-
-#enrm-gallery-name-69868 {
-    visibility: hidden;
+.collections-section {
+    margin: 3em;
+    padding-right: 5em;
+    overflow: auto;
+    height: 100%;
 }
