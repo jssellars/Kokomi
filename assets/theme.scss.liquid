@@ -1253,8 +1253,7 @@ svg:not(:root) {
 .grid {
   @include clearfix();
   list-style: none;
-  margin: 0 auto;
-  width: 100vw;
+  margin-left: 15%;
   overflow: hidden;
 }
 
@@ -1508,13 +1507,20 @@ html {
   max-width: $width-site;
   margin-top: 0;
   margin-bottom: 0;
-  margin-left: 15%;
   text-align: center;
 }
 
 .main-content {
   overflow: hidden;
   height: 100%;
+  width: 100%;
+  /*display: flex;
+  position: relative;
+  flex: 1 1;
+  min-width: 0%;
+  max-width: 100%;
+  justify-content:center;
+  overflow: auto;*/
 }
 
 hr {

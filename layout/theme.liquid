@@ -87,9 +87,9 @@
 
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
-  {% section "header" %}
+<div class="site-wrapper">
 
-  <div class="site-wrapper">
+  {% section "header" %}
   
   {% section "sidebar" %}
 
@@ -109,33 +109,35 @@
 
     </div>
 
+      {% if request.page_type == 'product' or request.page_type == 'index' %}
+      {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+      <script>
+        // Set a global variable for theme.js to use on product single init
+        window.theme = window.theme || {};
+        theme.moneyFormat = {{ shop.money_format | json }};
+        theme.productSingleObject = {{ product | json }};
+      </script>
+      {% endif %}
 
-    {%- if request.page_type == 'index' -%}
-      <p id="slideshow-info" class="visually-hidden" aria-hidden="true">
-        {{- 'homepage.slideshow.navigation_instructions' | t -}}
-      </p>
-    {%- endif -%}
+      <ul hidden>
+        <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
+        <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
+      </ul>
+
+      {{ 'theme.js' | asset_url | script_tag }}
+
+
+      {%- if request.page_type == 'index' -%}
+        <p id="slideshow-info" class="visually-hidden" aria-hidden="true">
+          {{- 'homepage.slideshow.navigation_instructions' | t -}}
+        </p>
+      {%- endif -%}
 
   </div>
-
+  
   {% section "footer" %}
 
+</div>
 
-  {% if request.page_type == 'product' or request.page_type == 'index' %}
-    {{ 'option_selection.js' | shopify_asset_url | script_tag }}
-    <script>
-      // Set a global variable for theme.js to use on product single init
-      window.theme = window.theme || {};
-      theme.moneyFormat = {{ shop.money_format | json }};
-      theme.productSingleObject = {{ product | json }};
-    </script>
-  {% endif %}
-
-  <ul hidden>
-    <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
-    <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
-  </ul>
-
-  {{ 'theme.js' | asset_url | script_tag }}
 </body>
 </html>
