@@ -16,7 +16,7 @@
     "type_base_size": "16px",
     "type_button_base_size": "14px",
     "type_navigation_base_size": "16px",
-    "show_breadcrumb_nav": true,
+    "show_breadcrumb_nav": false,
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
@@ -158,6 +158,14 @@
           "heading_size": 20,
           "feed_width": 100,
           "html_area": ""
+        }
+      },
+      "collection-slider": {
+        "type": "collection-slider",
+        "settings": {
+          "title": "Featured collection slider",
+          "home_page_featured_products": "chains",
+          "home_featured_products_row_num": 2
         }
       }
     },
