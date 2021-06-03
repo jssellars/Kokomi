@@ -68,6 +68,10 @@
     padding-right: 3em;
 }
 
+#insta-feed h2 {
+    color: #A687ED;
+}
+
 #footer {
     background-color: aliceblue;
     width: 85%;
