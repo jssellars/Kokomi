@@ -149,7 +149,7 @@ $font-size-base: {{ settings.type_base_size }}; // Henceforth known as 1em
 $z-index-skip-to-content: 10000; // really high to be safe of app markup
 
 /*====== Forms ======*/
-$padding-form: 8px;
+$padding-form: 5px;
 
 /*====== Select icon ======*/
 $svg-select-icon: #{'{{ "ico-select.svg" | asset_url }}'};
@@ -1514,7 +1514,7 @@ html {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  margin-top: 3.5em;
+  margin-top: 3.2em;
   /*display: flex;
   position: relative;
   flex: 1 1;
@@ -2109,6 +2109,8 @@ th {
   margin-bottom: 0;
   padding: 10px $gutter;
   color: $color-btn-primary-text;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page-border {
@@ -2144,8 +2146,8 @@ th {
 
   .search-bar__input {
     @include placeholder-text($color-body-text, 1);
-    background: transparent;
-    border: 0;
+    background: #e9ddf9;
+    border: 1px solid black;
     width: calc(100% - 22px);
   }
 
@@ -2473,12 +2475,11 @@ html[xmlns] .slides { display: block; }
 }
 
 .slides__text-content {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 0;
-  right: 0;
   @include transform(translateY(-50%));
   z-index: 1;
 
@@ -2545,6 +2546,7 @@ html[xmlns] .slides { display: block; }
 .slides__btn {
   display: none;
   border: none;
+  padding: 1em;
 
   @include media-query($medium-up) {
     display: block;

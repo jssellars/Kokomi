@@ -18,7 +18,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    margin-top: 3.5em;
+    margin-top: 3.2em;
     text-align: center;
 }
 
@@ -50,6 +50,12 @@
     justify-content: flex-end;
     padding-top: 10px;
     padding-right: 3rem;
+    width: 100%;
+}
+
+.top-bar__search {
+    margin-right: 2em;
+    color: #e9ddf9;
 }
 
 #shopify-section-slideshow {
@@ -68,6 +74,7 @@
     position: absolute;
     height: 7em;
     margin-left: 15%;
+    margin-top: 55px;
 }
 
 .site-footer__menu {
