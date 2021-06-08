@@ -80,6 +80,31 @@
     margin: 0 3em;
 }
 
+#about-us {
+    text-align: center;
+}
+
+.about-grid {
+    margin: 0 6em;
+}
+
+.owner-bios {
+    display: flex;
+    margin-top: 3em;
+}
+
+#Katie {
+    display: flex;
+}
+
+#Kevin {
+    display: flex;
+}
+
+.small--text-center {
+    text-align: center;
+}
+
 #footer {
     background-color: aliceblue;
     width: 85%;
