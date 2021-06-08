@@ -85,20 +85,25 @@
 }
 
 .about-grid {
-    margin: 0 6em;
+    margin: 4em 6em 3em 6em;
 }
 
 .owner-bios {
     display: flex;
-    margin-top: 3em;
+    margin-top: 6em;
+    justify-content: space-between;
 }
 
 #Katie {
     display: flex;
+    align-items: center;
+    width: 500px;
 }
 
 #Kevin {
     display: flex;
+    align-items: center;
+    width: 500px;
 }
 
 .small--text-center {

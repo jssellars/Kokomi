@@ -12,13 +12,15 @@
 
 <div class="owner-bios">
 
+{%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
     <div id="Katie">
         <div id="Katie-bio">
             <h1> Katie </h1>
             <h3> <b>title</b> </h3>
             <p>  {{ section.settings.name2 }} </p>
         </div>
-        <p> image here </p>
+         <img id="katie-selfie" src="{{ section.settings.selfie-katie | img_url: '150x150' }}" >
     </div>
     
     <div id="Kevin">
@@ -27,7 +29,7 @@
             <h3> <b>title</b> </h3>
             <p> {{ section.settings.name1 }} </p>
         </div>
-        <p> image here </p>
+        <img id="kevin-selfie" src="{{ section.settings.selfie-kevin | img_url: '150x150' }}" >
     </div>
 
 </div>
@@ -52,6 +54,18 @@
             "id": "name2",
             "label": "Kevin",
             "default": "Lorem Ipsum Dolor"
+        },
+
+        {
+            "type": "image_picker",
+            "id": "selfie-katie",
+            "label": "Logo image"
+        },
+
+        {
+            "type": "image_picker",
+            "id": "selfie-kevin",
+            "label": "Logo image"
         }
     ]
 }
