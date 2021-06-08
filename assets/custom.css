@@ -54,7 +54,7 @@
 }
 
 .top-bar__search {
-    margin-right: 2em;
+    margin-right: 3em;
     color: #e9ddf9;
 }
 
@@ -70,6 +70,14 @@
 
 #insta-feed h2 {
     color: #A687ED;
+}
+
+.new-grid, .collection_list {
+    margin: 3em;
+}
+
+.gallery-section {
+    margin: 0 3em;
 }
 
 #footer {
@@ -94,7 +102,6 @@
 
 .collections-section {
     margin: 3em;
-    padding-right: 5em;
     overflow: auto;
     height: 100%;
 }

@@ -1,4 +1,4 @@
-<div class="collection-list collection-list--{{ section.id }}" data-section-id="{{ section.id }}">
+<div class="new-grid collection-list collection-list--{{ section.id }}" data-section-id="{{ section.id }}">
 
   {% if section.settings.title != blank %}
     <h2 class="small--text-center">{{ section.settings.title | escape }}</h2>
@@ -19,7 +19,7 @@
 
   <div class="collection-grid">
    <!-- <div class="grid grid--uniform" > -->
-   <div class="new-grid">
+   <div>
       {% for block in section.blocks limit: section.blocks.size %}
         <div class="grid__item {{ grid_item_width }} slide-up-animation animated" {{ block.shopify_attributes }} role="listitem">
           {%- assign collection = collections[block.settings.collection] -%}
