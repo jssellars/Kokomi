@@ -91,19 +91,32 @@
 .owner-bios {
     display: flex;
     margin-top: 6em;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
-#Katie {
+.Bio {
     display: flex;
-    align-items: center;
-    width: 500px;
+    padding: 1em;
+    height: 25vw;
+    overflow: hidden;
+    align-items: flex-start;
 }
 
-#Kevin {
-    display: flex;
-    align-items: center;
-    width: 500px;
+#Katie-bio {
+    width: 15vw;
+    max-height: 100%;
+}
+
+#Kevin-bio {
+    width: 15vw;
+    max-height: 100%;
+}
+
+.selfie{
+    border-radius: 50%;
+    margin: 0 3em;
+    height: 10vw;
+    width: auto;
 }
 
 .small--text-center {

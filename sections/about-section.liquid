@@ -14,23 +14,23 @@
 
 {%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
-    <div id="Katie">
+    <div class="Bio">
         <div id="Katie-bio">
             <h1> Katie </h1>
             <h3> <b>title</b> </h3>
             <p>  {{ section.settings.name2 }} </p>
         </div>
-         <img id="katie-selfie" src="{{ section.settings.selfie-katie | img_url: '150x150' }}" >
     </div>
+    <img class="selfie" id="katie-selfie" src="{{ section.settings.selfie-katie | img_url: '400x200' }}" >
     
-    <div id="Kevin">
+    <div class="Bio">
         <div id="Kevin-bio">
             <h1> Kevin </h1>
             <h3> <b>title</b> </h3>
             <p> {{ section.settings.name1 }} </p>
         </div>
-        <img id="kevin-selfie" src="{{ section.settings.selfie-kevin | img_url: '150x150' }}" >
     </div>
+     <img class="selfie" id="kevin-selfie" src="{{ section.settings.selfie-kevin | img_url: '400x200' }}" >
 
 </div>
 
