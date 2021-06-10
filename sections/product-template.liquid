@@ -11,9 +11,9 @@
   {% assign current_variant = product.selected_or_first_available_variant %}
   {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
 
-  <div class="grid product-single">
+  <div class="new-grid product-single">
 
-    <div class="grid__item medium-up--one-half">
+    <div class="grid__item">
       {% for image in product.images %}
         {% capture img_id %}ProductImage-{{ image.id }}{% endcapture %}
         {% capture wrapper_id %}ProductImageWrapper-{{ image.id }}{% endcapture %}
@@ -75,7 +75,7 @@
       {% endif %}
     </div>
 
-    <div class="grid__item medium-up--one-half{% if product.images.size == 0%} medium-up--push-one-half{% endif %}">
+    <div class="grid__item {% if product.images.size == 0%} medium-up--push-one-half{% endif %}">
       <div class="product-single__meta small--text-center">
         <h1 class="product-single__title" itemprop="name">{{ product.title }}</h1>
 

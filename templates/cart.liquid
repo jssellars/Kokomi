@@ -1,6 +1,6 @@
 <!-- /templates/cart.liquid -->
 
-<div class="grid">
+<div class="new-grid">
   <div class="grid__item">
     {% if cart.item_count > 0 %}
       <h1 class="h2 visually-hidden">{{ 'cart.general.title' | t }}</h1>
@@ -129,11 +129,11 @@
 
         <footer class="cart__footer">
           <div class="grid">
-            <div class="grid__item large-up--one-half">
+           <!-- <div class="grid__item large-up--one-half">
               <label for="CartSpecialInstructions" class="label--block">{{ 'cart.general.note' | t }}</label>
               <textarea name="note" id="CartSpecialInstructions" class="input--block cart__note">{{ cart.note }}</textarea>
-            </div>
-            <div class="grid__item text-center large-up--one-half large-up--text-right">
+            </div>  -->
+            <div class="grid__item text-center large-up--text-right">
 
               {%- if cart.cart_level_discount_applications != blank -%}
                 <div class="order-discount-cart-wrapper">
