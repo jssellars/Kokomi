@@ -119,6 +119,20 @@
     width: auto;
 }
 
+#FAQ {
+    width: 80%
+}
+
+.paragraph {
+    margin-bottom: 2em;
+}
+
+.FAQ-list {
+    list-style: square;
+    margin-left: 1em;
+
+}
+
 .small--text-center {
     text-align: center;
 }
