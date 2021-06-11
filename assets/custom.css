@@ -87,7 +87,8 @@ html, body {
 }
 
 .gallery-section {
-    margin: 0 3em;
+    margin: 0 auto;
+    width: 90%
 }
 
 #about-us {
@@ -179,9 +180,9 @@ html, body {
 }
 
 .collections-section {
-    margin: 3em;
-    overflow: auto;
+    margin: auto;
     height: 100%;
+    width: 90%;
 }
 
 .enrm-branding a {
