@@ -23,12 +23,12 @@
           <input type="password" value="" name="customer[password]" id="CustomerPassword" class="{% if form.errors contains 'password' %} input--error{% endif %}" placeholder="{{ 'customer.login.password' | t }}">
         {% endif %}
 
-        <p>
+        <p class="account-links">
           <input type="submit" class="btn" value="{{ 'customer.login.sign_in' | t }}">
         </p>
-        <p>{{ 'layout.customer.create_account' | t | customer_register_link }}</p>
+        <p class="account-links">{{ 'layout.customer.create_account' | t | customer_register_link }}</p>
         {% if form.password_needed %}
-          <p><a href="#recover" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a></p>
+          <p class="account-links"><a href="#recover" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a></p>
         {% endif %}
 
       {% endform %}
@@ -40,7 +40,7 @@
     <div id="RecoverPasswordForm" class="hide">
 
       <h2 class="small--text-center">{{ 'customer.recover_password.title' | t }}</h2>
-      <p>{{ 'customer.recover_password.subtext' | t }}</p>
+      <p class="account-links">{{ 'customer.recover_password.subtext' | t }}</p>
 
       <div class="form-vertical">
         {% form 'recover_customer_password' %}
@@ -57,7 +57,7 @@
           <label for="RecoverEmail" class="label--hidden">{{ 'customer.recover_password.email' | t }}</label>
           <input type="email" value="" name="email" id="RecoverEmail" placeholder="{{ 'customer.recover_password.email' | t }}" autocorrect="off" autocapitalize="off">
 
-          <p>
+          <p class="account-links">
             <input type="submit" class="btn" value="{{ 'customer.recover_password.submit' | t }}">
           </p>
 

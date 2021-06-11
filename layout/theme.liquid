@@ -87,10 +87,11 @@
 
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
-<div class="site-wrapper">
+<div class="container">
 
-  {% section "header" %}
+<div class="site-wrapper">
   
+  {% section "header" %}
   {% section "sidebar" %}
 
     <div class="grid">
@@ -134,6 +135,8 @@
       {%- endif -%}
 
   </div>
+
+</div>
 
   {% section "footer" %}
 

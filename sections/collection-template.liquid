@@ -6,7 +6,7 @@
 {% paginate collection.products by 12 %}
 
 <div data-section-id="{{ section.id }}" data-section-type="collection-template" data-sort-enabled="{{ section.settings.collection_sort_enable }}" data-tags-enabled="{{ section.settings.collection_tag_enable }}">
-  <header class="grid">
+  <header>
     <h1 class="grid__item small--text-center {% if section.settings.collection_sort_enable or section.settings.collection_tag_enable %}medium-up--one-third{% endif %}">{% if current_tags.size > 0 %}{{ current_tags.first }}{% else %}{{ collection.title }}{% endif %}</h1>
 
     {% if section.settings.collection_sort_enable or section.settings.collection_tag_enable %}

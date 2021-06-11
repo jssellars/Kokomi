@@ -13,6 +13,8 @@
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
   {% endif %}
 
+  <a id="login-back-btn" href="https://kokomi-by-kal.myshopify.com/" itemprop="url"> < Back </a>
+
   <title>
   {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
   </title>
@@ -87,13 +89,12 @@
 
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
-<div class="site-wrapper">
+<div class="container">
 
-    <div class="grid">
+    <div class="new-grid">
 
       <main class="main-content" id="MainContent" role="main">
         {% unless request.page_type == 'index' %}
-          <hr class="hr--border-top small--hide">
         {% endunless %}
         {% if settings.show_breadcrumb_nav and request.page_type != 'index' %}
           {% include 'breadcrumb-nav' %}
