@@ -192,7 +192,15 @@ html, body {
     width: 0;
 }
 
+.enrm-img-wrapper {
+    padding: 10px;
+}
+
 #enrm-branding-69868 {
     visibility: hidden;
     color: white;
+}
+
+.search-bar {
+    margin: auto;
 }
